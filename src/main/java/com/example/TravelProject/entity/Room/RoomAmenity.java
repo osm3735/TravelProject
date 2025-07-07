@@ -1,20 +1,19 @@
 //package com.example.TravelProject.entity.Room;
-//
 //import jakarta.persistence.*;
 //import lombok.*;
 //
 //@Entity
-//@Table(name = "accommodation_amenity")
+//@Table(name = "room_amenity")
 //@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-//public class AccommodationAmenity {
+//public class RoomAmenity {
 //
 //    @EmbeddedId
-//    private AccommodationAmenityId id;
+//    private RoomAmenityId id;
 //
 //    @ManyToOne(fetch = FetchType.LAZY)
-//    @MapsId("accommodationId")
-//    @JoinColumn(name = "accommodation_id")
-//    private Accommodation accommodation;
+//    @MapsId("roomTypeId")
+//    @JoinColumn(name = "room_type_id")
+//    private RoomType roomType;
 //
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @MapsId("amenityId")

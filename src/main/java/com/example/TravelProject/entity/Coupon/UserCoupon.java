@@ -1,7 +1,7 @@
 package com.example.TravelProject.entity.Coupon;
 
 
-import com.example.TravelProject.entity.Booking.Booking;
+import com.example.TravelProject.entity.Booking.*;
 import com.example.TravelProject.entity.UserAccount.User;
 import jakarta.persistence.*;
 import lombok.*;
@@ -24,7 +24,7 @@ public class UserCoupon {
     @ManyToOne
     @JoinColumn(name = "coupon_id", nullable = false)
     private Coupon coupon;
-
+    @Builder.Default
     private Boolean isUsed = false;
 
     private LocalDateTime usedDate;

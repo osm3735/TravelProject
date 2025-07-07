@@ -18,10 +18,10 @@ public class ChatSession {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;  // nullable 허용됨
-
+    @Builder.Default
     private LocalDateTime startTime = LocalDateTime.now();
     private LocalDateTime endTime;
-
+    @Builder.Default
     private LocalDateTime lastInteractionTime = LocalDateTime.now();
 
     private String purpose;  // '숙소 추천', '여행 상품 문의', '예약 변경' 등

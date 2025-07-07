@@ -29,6 +29,6 @@ public class BookingGuest {
     private String gender;
     private String contactPhone;
     private String contactEmail;
-
+    @Builder.Default
     private Boolean isPrimaryContact = false;
 }

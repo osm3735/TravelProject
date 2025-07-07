@@ -40,17 +40,18 @@ public class TravelProduct {
 
     @Column(nullable = false)
     private BigDecimal basePrice;
-
+    @Builder.Default
     @Column(nullable = false)
     private Integer minParticipants = 1;
 
     private Integer maxParticipants;
-
+    @Builder.Default
     private String currency = "KRW";
-
+    @Builder.Default
     private Boolean isActive = true;
-
+    @Builder.Default
     private LocalDateTime registrationDate = LocalDateTime.now();
+    @Builder.Default
     private LocalDateTime lastUpdatedDate = LocalDateTime.now();
 }
 

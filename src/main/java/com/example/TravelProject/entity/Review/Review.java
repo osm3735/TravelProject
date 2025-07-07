@@ -39,10 +39,10 @@ public class Review {
 
     @Column(columnDefinition = "TEXT")
     private String comment;
-
+    @Builder.Default
     private LocalDateTime reviewDate = LocalDateTime.now();
-
+    @Builder.Default
     private Boolean isApproved = false;
-
+    @Builder.Default
     private Integer helpfulCount = 0;
 }

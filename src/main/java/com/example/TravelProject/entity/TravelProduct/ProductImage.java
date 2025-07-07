@@ -20,6 +20,6 @@ public class ProductImage {
     private String imageUrl;
 
     private String caption;
-
+    @Builder.Default
     private Integer orderNum = 0;
 }

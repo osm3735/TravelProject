@@ -26,11 +26,11 @@ public class Payment {
 
     @Column(nullable = false)
     private BigDecimal amount;
-
+    @Builder.Default
     private String currency = "KRW";
 
     private String paymentMethod;
-
+    @Builder.Default
     private LocalDateTime paymentDate = LocalDateTime.now();
 
     @Column(unique = true)

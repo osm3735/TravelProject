@@ -3,40 +3,41 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "price_policy")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class PricePolicy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "price_policy_id")
     private Integer pricePolicyId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_type_id", nullable = false)
     private RoomType roomType;
 
-    @Column(nullable = false)
-    private LocalDateTime  startDate;
+    @Column(name = "start_date", nullable = false)
+    private LocalDate startDate;
 
-    @Column(nullable = false)
-    private LocalDateTime endDate;
+    @Column(name = "end_date", nullable = false)
+    private LocalDate endDate;
 
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(name = "base_price", precision = 10, scale = 2, nullable = false)
     private BigDecimal basePrice;
 
-    @Column(precision = 10, scale = 2)
+    @Builder.Default
+    @Column(name = "additional_person_surcharge", precision = 10, scale = 2)
     private BigDecimal additionalPersonSurcharge = BigDecimal.ZERO;
 
-    @Column(precision = 10, scale = 2)
+    @Builder.Default
+    @Column(name = "weekend_surcharge", precision = 10, scale = 2)
     private BigDecimal weekendSurcharge = BigDecimal.ZERO;
 
-    @Column(precision = 10, scale = 2)
+    @Builder.Default
+    @Column(name = "holiday_surcharge", precision = 10, scale = 2)
     private BigDecimal holidaySurcharge = BigDecimal.ZERO;
 }

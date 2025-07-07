@@ -32,7 +32,7 @@ public class Coupon {
 
     @Column(nullable = false)
     private BigDecimal discountValue;
-
+    @Builder.Default
     private BigDecimal minOrderAmount = BigDecimal.ZERO;
 
     private BigDecimal maxDiscountAmount;
@@ -51,8 +51,8 @@ public class Coupon {
 
     @Column(nullable = false)
     private Integer totalQuantity;
-
+    @Builder.Default
     private Integer issuedQuantity = 0;
-
+    @Builder.Default
     private Integer usageLimitPerUser = 1;
 }

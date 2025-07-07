@@ -22,7 +22,7 @@ public class ChatMessage {
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String messageText;
-
+    @Builder.Default
     private LocalDateTime timestamp = LocalDateTime.now();
 
     private Boolean isSuccessfulResponse;

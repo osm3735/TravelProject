@@ -21,7 +21,7 @@ public class Refund {
 
     @Column(nullable = false)
     private BigDecimal refundAmount;
-
+    @Builder.Default
     private LocalDateTime refundDate = LocalDateTime.now();
 
     private String status;

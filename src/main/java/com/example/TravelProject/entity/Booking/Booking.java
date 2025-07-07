@@ -45,17 +45,17 @@ public class Booking {
 
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
-
+    @Builder.Default
     @Column(nullable = false)
     private Integer numAdults = 1;
-
+    @Builder.Default
     private Integer numChildren = 0;
 
     @Column(nullable = false)
     private BigDecimal totalAmount;
-
+    @Builder.Default
     private String currency = "KRW";
-
+    @Builder.Default
     private LocalDateTime bookingDate = LocalDateTime.now();
 
     private String status;
@@ -64,6 +64,6 @@ public class Booking {
     private String requestNotes;
 
     private LocalDateTime cancellationDate;
-
+    @Builder.Default
     private BigDecimal cancellationFee = BigDecimal.ZERO;
 }
