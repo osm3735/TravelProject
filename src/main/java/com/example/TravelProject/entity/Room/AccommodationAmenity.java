@@ -1,23 +1,27 @@
-//package com.example.TravelProject.entity.Room;
-//
-//import jakarta.persistence.*;
-//import lombok.*;
-//
-//@Entity
-//@Table(name = "accommodation_amenity")
-//@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-//public class AccommodationAmenity {
-//
-//    @EmbeddedId
-//    private AccommodationAmenityId id;
-//
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @MapsId("accommodationId")
-//    @JoinColumn(name = "accommodation_id")
-//    private Accommodation accommodation;
-//
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @MapsId("amenityId")
-//    @JoinColumn(name = "amenity_id")
-//    private Amenity amenity;
-//}
+package com.example.TravelProject.entity.Room;
+
+import java.io.Serializable;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(
+    name = "accommodation_amenity",
+    uniqueConstraints = @UniqueConstraint(columnNames = {"accommodation_id", "amenity_id"})
+)
+public class AccommodationAmenity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name = "accommodation_id", nullable = false)
+    private Accommodation accommodation;
+
+    @ManyToOne
+    @JoinColumn(name = "amenity_id", nullable = false)
+    private Amenity amenity;
+}
+

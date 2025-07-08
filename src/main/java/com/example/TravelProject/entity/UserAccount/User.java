@@ -35,11 +35,13 @@ public class User {
 
     private String profileImageUrl;
 
+    @Builder.Default
     @Column(nullable = false)
     private LocalDateTime registrationDate = LocalDateTime.now();
 
     private LocalDateTime lastLoginDate;
 
+    @Builder.Default
     @Column(nullable = false)
     private Boolean isActive = true;
 

@@ -40,6 +40,7 @@ public class Promotion {
     @Column(name = "discount_value", nullable = false, precision = 10, scale = 2)
     private BigDecimal discountValue;
 
+    @Builder.Default
     @Column(name = "min_order_amount", precision = 10, scale = 2)
     private BigDecimal minOrderAmount = BigDecimal.ZERO;
 
